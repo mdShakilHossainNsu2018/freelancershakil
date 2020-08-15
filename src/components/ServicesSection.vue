@@ -10,7 +10,7 @@
 
                     <!--                 <div class="product" >-->
 
-                    <v-col cols="4" v-for="product in products" v-bind:key="product.id">
+                    <v-col xs="12" sm="6" md="6" lg="4" xl="4" v-for="product in products" v-bind:key="product.id">
                         <v-card
                                 max-width="344"
                                 class="mx-auto"

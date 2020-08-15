@@ -8,9 +8,10 @@
                     elevate-on-scroll
                     scroll-target="#scrolling-techniques-7"
             >
-                <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-                <v-toolbar-title>Title</v-toolbar-title>
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer" ></v-app-bar-nav-icon>
+
+                <v-toolbar-title>CodeForSolutions</v-toolbar-title>
 
                 <v-spacer></v-spacer>
 
@@ -34,8 +35,45 @@
                     class="overflow-y-auto"
                     max-height="600"
             >
-                <!--                  <v-main>-->
-                <!--      <HelloWorld/>-->
+
+
+                <v-navigation-drawer
+                        v-model="drawer"
+                        absolute
+                        temporary
+                >
+                    <v-list-item>
+                        <v-list-item-avatar>
+                            <v-img src="./assets/img/me_fb.jpg"></v-img>
+                        </v-list-item-avatar>
+
+                        <v-list-item-content>
+                            <v-list-item-title>Md Shakil Hossain</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+                    <v-divider></v-divider>
+
+                    <v-list dense>
+
+                        <v-list-item
+                                v-for="item in items"
+                                :key="item.title"
+                                link
+                        >
+                            <v-list-item-icon>
+                                <v-icon>{{item.icon}}</v-icon>
+                            </v-list-item-icon>
+
+                            <v-list-item-content>
+                                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list>
+                </v-navigation-drawer>
+
+
+
 
 
                 <MainSection style="margin-top: 4rem"/>
@@ -43,12 +81,7 @@
                 <ServicesSection/>
                 <ProductsSection/>
                 <AchievementsSection/>
-                <FooterSection/>
-
-
-
-
-                <!--                  </v-main>-->
+                <FooterSection style="margin-bottom: 1rem"/>
 
             </v-sheet>
         </v-card>
@@ -77,9 +110,15 @@
             MainSection,
         },
 
-        data: () => ({
-            //
-        }),
+        data () {
+            return {
+                drawer: null,
+                items: [
+                    { title: 'Home', icon: 'mdi-home' },
+                    { title: 'About', icon: 'mdi-information' },
+                ],
+            }
+        },
     };
 </script>
 

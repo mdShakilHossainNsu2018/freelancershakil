@@ -61,7 +61,7 @@
 <style scoped>
 .skills-container{
     background-color: white;
-    /*height: 100vh;*/
+    height: 100vh;
     width: 100%;
     text-align: center;
     position: relative;

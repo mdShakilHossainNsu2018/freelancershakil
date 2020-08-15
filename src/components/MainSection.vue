@@ -6,17 +6,20 @@
 
 <!--            <v-img src="../assets/code.jpg" class="background-image">-->
 <!--            </v-img>-->
-            <img src="../assets/img/code.jpg" alt="img" class="background-image">
+
+            <v-img src="../assets/img/code.jpg" alt="img" class="background-image"></v-img>
             <div class="centered">
                 <v-row>
                     <v-col class="mb-4">
                         <h1 class="display-2 font-weight-bold mb-3 welcome-text">
-                            Welcome to Vuetify
+                            Welcome to CodeForSolutions
+
                         </h1>
 
                         <p class="subheading font-weight-regular">
                             For help and collaboration with other Vuetify developers,
                             <br>please join our online
+                            <v-icon>mdi-home</v-icon>
                             <a
                                     href="https://community.vuetifyjs.com"
                                     target="_blank"
@@ -37,10 +40,10 @@
 
 
                     <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-                        <v-card class="mx-auto"
+                        <v-card class="mx-auto my-img-card"
                                 max-width="400">
                             <!--      < class="my-img" src="./assets/me.jpg" alt="my photo">-->
-                            <v-img src="../assets/img/me_fb.jpg" class="white--text align-end my-img"
+                            <v-img src="../assets/img/me_fb.jpg" class="white--text align-center my-img"
                                    height="250px"></v-img>
                             <h1 class="my-name">Md Shakil Hossain</h1>
 
@@ -84,7 +87,8 @@
 
         /*width: 100% !important;*/
         /*position: absolute;*/
-        height: 90vh;
+        height: 100vh;
+
         width: 100%;
         /*clip-rule: evenodd;*/
         clip-path: polygon(0 0, 100% 0, 100% 84%, 0% 100%);
@@ -103,8 +107,39 @@
         position: relative;
         text-align: center;
         color: white;
+        height: 100vh;
+
 
     }
+
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+            .main-container{
+                margin-bottom: 15rem;
+            }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+            .main-container{
+                margin-bottom: 10rem;
+            }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+            .main-container{
+                margin-bottom: 5rem;
+            }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    /*@media only screen and (min-width: 992px) {...}*/
+
+    /*!* Extra large devices (large laptops and desktops, 1200px and up) *!*/
+    /*@media only screen and (min-width: 1200px) {...}*/
+
 
     .centered {
         position: absolute;
