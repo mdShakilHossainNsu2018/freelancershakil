@@ -5,7 +5,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-import VueParticles from "vue-particles";
 import VueGtag from "vue-gtag";
 
 Vue.config.productionTip = false
@@ -17,7 +16,6 @@ Vue.component('k-progress', KProgress);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-Vue.use(VueParticles);
 
 Vue.use(VueGtag, {
     config: { id: "UA-146465351-1" }
