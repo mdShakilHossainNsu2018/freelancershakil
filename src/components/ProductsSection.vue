@@ -1,32 +1,31 @@
 <template>
-    <div>
-    <h1>Our Products:</h1>
-        <v-carousel
-                cycle
-                height="400"
-                hide-delimiter-background
-                show-arrows-on-hover
-        >
-            <v-carousel-item
-                    v-for="(slide, i) in slides"
-                    :key="i"
+        <v-container>
+            <h1>Our Products:</h1>
+            <v-carousel
+                    cycle
+                    height="400"
+                    hide-delimiter-background
+                    show-arrows-on-hover
             >
-                <v-sheet
-                        :color="colors[i]"
-                        height="100%"
+                <v-carousel-item
+                        v-for="(slide, i) in slides"
+                        :key="i"
                 >
-                    <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center"
+                    <v-sheet
+                            :color="colors[i]"
+                            height="100%"
                     >
-                        <div class="display-3">{{ slide }} Slide</div>
-                    </v-row>
-                </v-sheet>
-            </v-carousel-item>
-        </v-carousel>
-
-    </div>
+                        <v-row
+                                class="fill-height"
+                                align="center"
+                                justify="center"
+                        >
+                            <div class="display-3">{{ slide }} Slide</div>
+                        </v-row>
+                    </v-sheet>
+                </v-carousel-item>
+            </v-carousel>
+        </v-container>
 
 </template>
 
