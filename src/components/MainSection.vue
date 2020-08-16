@@ -36,7 +36,7 @@
                         class="mx-auto"
                         max-width="400"
                         color="white"
-                        shaped="true"
+                        :shaped="true"
                 >
                     <v-img
                             class="white--text align-end"
