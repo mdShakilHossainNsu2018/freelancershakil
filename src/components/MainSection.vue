@@ -106,7 +106,7 @@
                         color: 'red lighten-2',
                         icon: 'mdi-star',
                         title: 'Goal',
-                        description: 'Our goal is to make our client happy and fulfill his/har all requirements.'
+                        description: 'Our goal is to make our client happy and fulfill all requirements.'
                     },
                     {
                         color: 'purple darken-1',
