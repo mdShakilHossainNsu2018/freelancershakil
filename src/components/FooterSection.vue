@@ -12,7 +12,7 @@
                 <v-btn
                         v-for="icon in icons"
                         :key="icon.name"
-                        class="mx-4 white--text"
+                        class="mx-4 white--text "
                         icon
                         :href="icon.link"
                 >
@@ -20,8 +20,41 @@
                 </v-btn>
             </v-card-text>
 
-            <v-card-text class="white--text pt-0">
-                Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <v-card-text class="white--text pt-0 " style="width: 100vw">
+                <h1>Contact us.</h1>
+
+                    <v-btn
+                            color="primary"
+                            depressed
+                            href="tel:01729996899"
+                            class="mt-3"
+                    >
+                        <v-icon left>mdi-phone</v-icon>
+                        01729996899
+                    </v-btn>
+                <br>
+
+                <v-btn
+                        color="primary"
+                        depressed
+                        class="mt-3"
+                        href="mailto: shakilnsu2018@gmail.com"
+                >
+                    <v-icon left>mdi-email</v-icon>
+                    shakilnsu2018@gmail.com
+                </v-btn>
+                <br>
+                <v-btn
+                        color="primary"
+                        depressed
+                        class="mt-3"
+                >
+                    <v-icon left>mdi-home</v-icon>
+                    Rajsahi, Pabna, Ishurdi, Autapara
+                </v-btn>
+
+
+
             </v-card-text>
 
             <v-divider></v-divider>
@@ -40,10 +73,11 @@
         data(){
             return{
                 icons: [
-                    {id:1, name:'mdi-facebook', link: 'https://facebook.com'},
-                    {id:2, name: 'mdi-twitter', link: 'https://facebook.com'},
-                    {id:3, name: 'mdi-linkedin', link: 'https://facebook.com'},
-                    {id:4, name: 'mdi-instagram', link: 'https://facebook.com'}
+                    {name:'mdi-facebook', link: 'https://web.facebook.com/pkshakilhossin/'},
+                    {name: 'mdi-email', link: 'mailto: shakilnsu2018@gmail.com'},
+                    {name: 'mdi-twitter', link: 'https://twitter.com/MdShaki16422594'},
+                    {name: 'mdi-linkedin', link: 'https://www.linkedin.com/in/md-shakil-hossin-892369165/'},
+                    {name: 'mdi-instagram', link: 'https://www.instagram.com/pkshakil/?hl=en'}
                 ],
             }
         }

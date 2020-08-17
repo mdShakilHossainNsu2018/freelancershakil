@@ -27,6 +27,13 @@
                     {id: 2, name: 'Css', percentage: 70},
                     {id: 3, name: 'Javascript', percentage: 80},
                     {id: 4, name: 'Python', percentage: 85},
+                    {id: 5, name: 'Dart', percentage: 60},
+                    {id: 6, name: 'Flutter', percentage: 70},
+                    {id: 7, name: 'Vue js', percentage: 90},
+                    {id: 8, name: 'Django', percentage: 80},
+                    {id: 9, name: 'Docker', percentage: 70},
+                    {id: 10, name: 'Sql', percentage: 75},
+
 
                 ],
                 lineHeight: 15,
@@ -38,7 +45,7 @@
                     '#4CAF50',
                     '#00BCD4',
                     '#FF5722',
-                    '#FFEB3B',
+                    '#2196F3',
                 ],
 
             }
