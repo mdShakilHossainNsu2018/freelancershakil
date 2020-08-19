@@ -8,7 +8,6 @@
                 <k-progress :percent="skill.percentage"  :color="colors[index % 7]"
                             :line-height="lineHeight"></k-progress>
             </div>
-
         </div>
 
     </v-container>

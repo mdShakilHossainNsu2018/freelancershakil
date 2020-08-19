@@ -1,5 +1,6 @@
 <template>
 
+
     <v-app>
         <v-card class="overflow-hidden">
             <v-app-bar
@@ -10,7 +11,7 @@
                     scroll-target="#scrolling-techniques-6"
             >
 
-                <v-app-bar-nav-icon @click.stop="drawer = !drawer" ></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
                 <v-toolbar-title>CodeForSolutions</v-toolbar-title>
 
@@ -21,7 +22,6 @@
                     <v-icon>mdi-dots-vertical</v-icon>
                 </v-btn>
             </v-app-bar>
-
 
 
             <v-sheet
@@ -53,7 +53,7 @@
                         <v-list-item
                                 v-for="item in items"
                                 :key="item.title"
-                                link
+                                :to="item.link"
                         >
                             <v-list-item-icon>
                                 <v-icon>{{item.icon}}</v-icon>
@@ -66,48 +66,31 @@
                     </v-list>
                 </v-navigation-drawer>
 
+                <v-container fluid style="min-height: 100vh;" >
+                    <router-view/>
+                </v-container>
 
-
-                <MainSection style="margin-top: 4rem"/>
-                <SkillsSection/>
-                <ServicesSection/>
-                <ProductsSection/>
-                <AchievementsSection/>
-                <FooterSection style="margin-bottom: 1rem"/>
 
             </v-sheet>
         </v-card>
 
 
     </v-app>
-</template>
 
+</template>
 <script>
-    import MainSection from './components/MainSection';
-    import SkillsSection from "@/components/SkillsSection";
-    import ProductsSection from "@/components/ProductsSection";
-    import FooterSection from "@/components/FooterSection";
-    import ServicesSection from "@/components/ServicesSection";
-    import AchievementsSection from "@/components/achievementsSection";
 
     export default {
         name: 'App',
 
-        components: {
-            AchievementsSection,
-            ServicesSection,
-            FooterSection,
-            ProductsSection,
-            SkillsSection,
-            MainSection,
-        },
-
-        data () {
+        data() {
             return {
                 drawer: null,
                 items: [
-                    { title: 'Home', icon: 'mdi-home' },
-                    { title: 'About', icon: 'mdi-information' },
+                    {title: 'Home', icon: 'mdi-home', link: '/'},
+                    {title: 'Blog', icon: 'mdi-blogger', link: '/blog'},
+                    {title: 'About', icon: 'mdi-information', link: '/about'},
+
                 ],
                 collapseOnScroll: true,
             }
@@ -117,10 +100,10 @@
 
 
 <style>
-
     html {
-        overflow: hidden;
+        overflow: hidden !important;
     }
-
-
+    /*.overflow-y-auto{*/
+    /*    overflow-y: hidden !important;*/
+    /*}*/
 </style>
