@@ -20,6 +20,7 @@
 
 <script>
     import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
+    // import store from '../store'
     import {
         Blockquote,
         CodeBlock,
@@ -74,7 +75,8 @@
 
         methods: {
             onClick(){
-                console.log(this.text)
+                this.$store.commit('increment');
+                console.log(this.$store.state.count)
             }
         }
     }

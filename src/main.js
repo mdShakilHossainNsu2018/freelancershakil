@@ -4,6 +4,8 @@ import vuetify from './plugins/vuetify';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import {store} from './store/index'
+
 
 import VueGtag from "vue-gtag";
 
@@ -27,5 +29,6 @@ Vue.use(VueGtag, {
 new Vue({
   vuetify,
   router,
+    store: store,
   render: h => h(App)
 }).$mount('#app')
