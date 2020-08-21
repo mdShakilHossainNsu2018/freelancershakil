@@ -15,12 +15,78 @@
 
                 <v-toolbar-title>CodeForSolutions</v-toolbar-title>
 
+
                 <v-spacer></v-spacer>
 
 
-                <v-btn icon>
-                    <v-icon>mdi-dots-vertical</v-icon>
+
+<!--                <v-btn icon>-->
+<!--                    <v-icon>mdi-magnify</v-icon>-->
+<!--                </v-btn>-->
+
+                <v-menu
+                        left
+                        bottom
+                >
+                    <template v-slot:activator="{ on, attrs }">
+                        <v-btn
+                                icon
+                                v-bind="attrs"
+                                v-on="on"
+                        >
+                            <v-icon>mdi-dots-vertical</v-icon>
+                        </v-btn>
+                    </template>
+
+                    <v-list v-if="!userName">
+                        <v-list-item
+                                @click="() => {}"
+                        >
+                            <v-list-item-title>
+                                <v-btn to="/login">
+                                    <v-icon>mdi-login</v-icon>
+                                    login
+                                </v-btn>
+                            </v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+
+                    <v-list v-if="userName">
+                        <v-list-item
+                                @click="() => {
+                                    this.$store.dispatch('userLogout')
+                                }"
+                        >
+                            <v-list-item-title>
+                                <v-btn class="mt-4">
+                                    <v-icon>mdi-logout</v-icon>
+                                    logout
+                                </v-btn>
+                            </v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+
+
+                    <v-list v-if="!userName">
+                        <v-list-item
+                                @click="() => {}"
+                        >
+                            <v-list-item-title>
+                                <v-btn to="/register" class="mt-4">
+                                    <v-icon>mdi-account-arrow-right</v-icon>
+                                    sign up
+                                </v-btn>
+                            </v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+
+
+                </v-menu>
+
+                <v-btn v-if="userName">
+                    <v-icon>mdi-account</v-icon> {{userName}}
                 </v-btn>
+
             </v-app-bar>
 
 
@@ -51,6 +117,7 @@
                     <v-list dense>
 
                         <v-list-item
+
                                 v-for="item in items"
                                 :key="item.title"
                                 :to="item.link"
@@ -66,7 +133,7 @@
                     </v-list>
                 </v-navigation-drawer>
 
-                <v-container fluid style="min-height: 100vh;" >
+                <v-container fluid style="min-height: 100vh;">
                     <router-view/>
                 </v-container>
 
@@ -95,6 +162,14 @@
                 collapseOnScroll: true,
             }
         },
+        mounted(){
+            this.$store.dispatch('inIt')
+        },
+        computed: {
+            userName: function(){
+                return this.$store.state.username;
+            }
+        }
     };
 </script>
 
@@ -102,7 +177,9 @@
 <style>
     html {
         overflow: hidden !important;
+        overflow-x: hidden !important;
     }
+
     /*.overflow-y-auto{*/
     /*    overflow-y: hidden !important;*/
     /*}*/

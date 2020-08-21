@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Blog from '../views/Blog.vue'
+import Login from '../views/Login'
+import Register from '../views/Register'
+import BlogCreate from "@/views/BlogCreate";
 
 Vue.use(VueRouter)
 
@@ -21,7 +24,23 @@ Vue.use(VueRouter)
       path: '/blog',
       name: 'Blog',
       component: Blog
-    }
+    },
+
+    {
+      path: '/blog/create/',
+      name: 'BlogCreate',
+      component: BlogCreate
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
 ]
 
 const router = new VueRouter({

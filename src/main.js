@@ -5,6 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {store} from './store/index'
+import { VueShowdown } from 'vue-showdown'
 
 
 import VueGtag from "vue-gtag";
@@ -18,7 +19,7 @@ import router from './router'
 Vue.component('k-progress', KProgress);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-
+Vue.component('VueShowdown', VueShowdown)
 
 Vue.use(VueGtag, {
     config: { id: "UA-146465351-1" }
