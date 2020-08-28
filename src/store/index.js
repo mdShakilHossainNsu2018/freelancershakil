@@ -13,6 +13,7 @@ export const store = new Vuex.Store({
         token: '',
         username: '',
         status: '',
+        isLoading: false,
         userDetail: {},
     },
     mutations: {
@@ -46,8 +47,12 @@ export const store = new Vuex.Store({
 
         },
 
-        SET_USER_DETAIL(state, data){
+        SET_USER_DETAIL(state, data) {
             state.userDetail = data;
+        },
+
+        SET_LOADING_STATE(state, data) {
+            state.isLoading = data;
         }
     },
 
@@ -98,13 +103,22 @@ export const store = new Vuex.Store({
             const token = localStorage.getItem('user-token')
             axios.post('https://codeforsolutionsbackend.herokuapp.com/api/users/user-by-token/',
                 {token: token}).then(res => {
-                    context.commit('SET_USER_DETAIL', res.data)
+                context.commit('SET_USER_DETAIL', res.data)
             }).catch(err => console.log(err))
         },
 
 
-        fetchBlogs() {
-            axios.get('https://codeforsolutionsbackend.herokuapp.com/api/blogs/').then(res => store.commit('SET_ALL_BLOGS', res.data))
+        fetchBlogs(context) {
+            context.commit('SET_LOADING_STATE', true)
+            axios.get('https://codeforsolutionsbackend.herokuapp.com/api/blogs/').then(res => {
+                context.commit('SET_LOADING_STATE', false)
+                store.commit('SET_ALL_BLOGS', res.data)
+
+            }).catch(err => {
+                context.commit('SET_LOADING_STATE', false)
+                console.log(err)
+            })
+
         },
 
         createBlog(context, data) {
@@ -115,8 +129,19 @@ export const store = new Vuex.Store({
                         'Authorization': `token ${context.state.token}`
                     }
                 }
+            ).then(res => {
+                router.push('/blog/');
+                console.log(res.data.message)
+            })
+        }
+    },
 
-                ).then(res => {router.push('/blog/'); console.log(res.data.message)})
+    getters: {
+        isLoadingStatus: state => {
+            return state.isLoading;
+        },
+        blogs: state => {
+            return state.blogs;
         }
     }
 })

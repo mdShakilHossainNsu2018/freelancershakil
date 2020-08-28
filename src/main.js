@@ -18,6 +18,7 @@ import KProgress from 'k-progress';
 import router from './router'
 Vue.component('k-progress', KProgress);
 
+
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('VueShowdown', VueShowdown)
 
